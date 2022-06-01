@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Quintix_App_MVC.Data;
 
@@ -11,9 +12,10 @@ using Quintix_App_MVC.Data;
 namespace Quintix_App_MVC.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220531211135_ProgramChange")]
+    partial class ProgramChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -245,7 +247,7 @@ namespace Quintix_App_MVC.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PlayerModelDatas", (string)null);
+                    b.ToTable("PlayerModelDatas");
                 });
 
             modelBuilder.Entity("Quintix_App_MVC.Models.UserModel", b =>
